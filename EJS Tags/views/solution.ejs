@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EJS Tags</title>
+</head>
+
+<body>
+  <h1>
+    <!-- Tite goes here as it is just a simple output so it is enclosed in output tag inside h1 tag to be shown bigger -->
+    <%= title %>
+  </h1>
+  <p>Current second:
+    <!-- Current second goes here as his is also an output -->
+    <%= seconds %>
+  </p>
+  <!-- as it is pure javascript it does not need any output so it is in simple ejs tag  -->
+  <% if (seconds % 2===0) { %>
+    <ul>
+      <!-- List goes here if current second is even. for loop use krne ka modern tarika -->
+      <%items.forEach((fruit)=> { %>
+        <li>
+          <%=fruit %>
+          <!-- it should be in output tag otherwise it will be treated as html  -->
+        </li>
+        <%}) %>
+
+          <!-- Otherwise it should display the following: -->
+          <!-- <p>No items to display</p> -->
+    </ul>
+    <% } else {%>
+      <p>No items to display</p>
+      <% } %>
+
+        <p>
+          <!-- HTML content goes here as it is plain html so use html ejs tag-->
+          <%- htmlContent %>
+        </p>
+
+        <!-- Footer goes here  including another ejs file-->
+        <%- include("footer.ejs") %>
+</body>
+
+</html>

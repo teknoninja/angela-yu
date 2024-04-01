@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Name Letters count</title>
+  </head>
+
+  <body>
+    <!-- locals. will check if numberofletters is passed from solution.js as variable having some value or not if not then it will show the else part .
+    locals is way to access all the variables that are sent over through res.render  -->
+    <% if (locals.numberOfLetters) { %>
+    <h1>There are <%= numberOfLetters %> letters in your name.</h1>
+    <% } else { %>
+    <h1>Enter your name below 👇</h1>
+    <% } %>
+    <form action="/submit" method="POST">
+      <input type="text" name="fName" placeholder="First name" />
+      <input type="text" name="lName" placeholder="Last name" />
+      <input type="submit" value="OK" />
+    </form>
+  </body>
+</html>
